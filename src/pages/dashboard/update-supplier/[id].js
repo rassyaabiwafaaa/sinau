@@ -57,7 +57,7 @@ const UpdateSupplier = () => {
         setNoTelp(res.data.data.noTelp);
       })
       .catch((err) => router.push("/dashboard"));
-  }, []);
+  }, [data, router, token]);
 
   return (
     <>

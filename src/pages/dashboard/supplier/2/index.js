@@ -6,6 +6,7 @@ import axios from "axios";
 import { getCookie } from "cookies-next";
 import { Ava } from "public/images";
 import Image from "next/image";
+import Link from "next/link";
 
 const Supplier2 = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const Supplier2 = () => {
       .catch((err) => {
         router.push("/");
       });
-  }, [data]);
+  }, [data, router, token]);
 
   return (
     <>
@@ -78,7 +79,7 @@ const Supplier2 = () => {
         <div className="flex flex-col gap-8 mt-5">
           <div className="w-[200px] text-center bg-primary rounded-md shadow-lg">
             <div className="w-[200px] h-[200px] bg-green-400 rounded-t-md">
-              <Image src={Ava} className="w-full" />
+              <Image src={Ava} className="w-full" alt="Ava" />
             </div>
             <h1 className="py-3 font-medium text-[18px] text-fontColor">{username}</h1>
           </div>
@@ -146,10 +147,10 @@ const Supplier2 = () => {
           </table>
           <div className="flex justify-between">
             <div className="px-2 py-2 bg-primary text-black font-bold text-3xl">
-              <a href="/dashboard/supplier">{"<"}</a>
+              <Link href="/dashboard/supplier">{"<"}</Link>
             </div>
             <div className="px-2 py-2 bg-primary text-black font-bold text-3xl">
-              <a href="/dashboard/supplier/3">{">"}</a>
+              <Link href="/dashboard/supplier/3">{">"}</Link>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ const UpadateBarang = () => {
   // params
   const router = useRouter();
   const { id } = router.query;
+  console.log(id);
 
   // data
   const [namaBarang, setNamaBarang] = useState("");
@@ -64,6 +65,7 @@ const UpadateBarang = () => {
         },
       })
       .then((res) => {
+        console.log(res);
         setNamaBarang(res.data.data.namaBarang);
         setHargaBarang(res.data.data.harga);
         setStokBarang(res.data.data.stok);
@@ -74,7 +76,7 @@ const UpadateBarang = () => {
       .catch((err) => {
         router.push("/dashboard");
       });
-  }, []);
+  }, [data, router, token]);
 
   return (
     <>
@@ -173,7 +175,7 @@ const UpadateBarang = () => {
                 Kembali
               </button>
               <button className="bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-black transition-all ease-in-out" type="button" onClick={handlerSubmit}>
-                Tambah Barang
+                Update Barang
               </button>
             </div>
           </form>

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
+import Link from "next/link";
 
 const Supplier3 = () => {
   const router = useRouter();
@@ -142,7 +143,7 @@ const Supplier3 = () => {
           </table>
           <div className="flex justify-start">
             <div className="px-2 py-2 bg-primary text-black font-bold text-3xl">
-              <a href="/dashboard/supplier/2">{"<"}</a>
+              <Link href="/dashboard/supplier/2">{"<"}</Link>
             </div>
           </div>
         </div>
